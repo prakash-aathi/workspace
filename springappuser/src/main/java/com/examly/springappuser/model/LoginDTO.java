@@ -7,12 +7,12 @@ public class LoginDTO {
     private String token;
     private String username;
     private String userRole;
-    private String userId;
+    private int userId;
 
     public LoginDTO() {
     }
 
-    public LoginDTO(String token, String username, String userRole, String userId) {
+    public LoginDTO(String token, String username, String userRole, int userId) {
         this.token = token;
         this.username = username;
         this.userRole = userRole;
@@ -43,11 +43,11 @@ public class LoginDTO {
         this.userRole = userRole;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
     
