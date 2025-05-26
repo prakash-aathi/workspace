@@ -1,4 +1,4 @@
-package com.examly.springappfeedback.model;
+package com.examly.springappuser.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
