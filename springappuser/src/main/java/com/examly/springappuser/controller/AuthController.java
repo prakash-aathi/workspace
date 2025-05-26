@@ -3,12 +3,12 @@ package com.examly.springappuser.controller;
 import java.net.URI;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.examly.springappuser.model.LoginDTO;
 import com.examly.springappuser.model.User;
 import com.examly.springappuser.service.UserService;
+
 
 @RestController
 public class AuthController {
@@ -20,7 +20,7 @@ public class AuthController {
     }
 
     @PostMapping("/api/register")
-    public ResponseEntity<String> registerUser(User user) {
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
 
         String userResponse = userService.createUser(user);
 
@@ -29,7 +29,7 @@ public class AuthController {
     }
 
     @PostMapping("/api/login")
-    public ResponseEntity<LoginDTO> loginUser(User user) {
+    public ResponseEntity<LoginDTO> loginUser(@RequestBody User user) {
 
         return ResponseEntity.ok(userService.loginUser(user));
     }
