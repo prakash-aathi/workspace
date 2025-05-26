@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.examly.springappuser.model.User;
 
-public interface UserRepo extends JpaRepository<User, String> {
+public interface UserRepo extends JpaRepository<User, Integer> {
 
     Optional<User> findByUsername(String username);
 
@@ -14,6 +14,5 @@ public interface UserRepo extends JpaRepository<User, String> {
 
     Boolean existsByUsername(String username);
     Boolean existsByEmail(String email);
-    Optional<User> findByUserId(String userId);
 
 }
