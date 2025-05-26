@@ -1,0 +1,6 @@
+com/examly/springappfeedback/service/FeedbackServiceImpl.class
+com/examly/springappfeedback/SpringappfeedbackApplication.class
+com/examly/springappfeedback/service/FeedbackService.class
+com/examly/springappfeedback/controller/FeedbackController.class
+com/examly/springappfeedback/model/Feedback.class
+com/examly/springappfeedback/model/User.class
