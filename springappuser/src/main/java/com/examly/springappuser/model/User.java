@@ -12,7 +12,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String userId;
+    private int userId;
     private String email;
     private String password;
     private String username;
@@ -22,7 +22,7 @@ public class User {
     public User() {
     }
 
-    public User(String userId, String email, String password, String username, String mobileNumber, String userRole) {
+    public User(int userId, String email, String password, String username, String mobileNumber, String userRole) {
         this.userId = userId;
         this.email = email;
         this.password = password;
@@ -31,11 +31,11 @@ public class User {
         this.userRole = userRole;
     }
 
-    public String getUserId() {
+    public int getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(int userId) {
         this.userId = userId;
     }
 
