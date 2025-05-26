@@ -20,7 +20,7 @@ public class AuthController {
     }
 
     @PostMapping("/api/register")
-    public ResponseEntity<String> registerUser(User user) {
+    public ResponseEntity<String> registerUser(@RequestBody User user) {
 
         String userResponse = userService.createUser(user);
 
@@ -29,7 +29,7 @@ public class AuthController {
     }
 
     @PostMapping("/api/login")
-    public ResponseEntity<LoginDTO> loginUser(User user) {
+    public ResponseEntity<LoginDTO> loginUser(@RequestBody User user) {
 
         return ResponseEntity.ok(userService.loginUser(user));
     }
