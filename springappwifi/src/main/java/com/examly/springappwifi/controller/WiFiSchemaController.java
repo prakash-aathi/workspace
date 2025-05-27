@@ -13,7 +13,7 @@ import com.examly.springappwifi.model.WiFiSchema;
 import com.examly.springappwifi.service.WiFiSchemaService;
 
 @RestController
-@RequestMapping("/api/wifiSchema")
+@RequestMapping("/api/wifiScheme")
 public class WiFiSchemaController {
 
     private final WiFiSchemaService wifiSchemaService;
@@ -22,7 +22,7 @@ public class WiFiSchemaController {
         this.wifiSchemaService = wifiSchemaService;
     }
 
-    // @PreAuthorize("hasRole('Admin')")
+    @PreAuthorize("hasRole('Admin')")
     @PostMapping
     public ResponseEntity<WiFiSchema> createWiFiSchema(@RequestBody WiFiSchema wifiSchema) {
         WiFiSchema createdSchema = wifiSchemaService.createWiFiSchema(wifiSchema);
