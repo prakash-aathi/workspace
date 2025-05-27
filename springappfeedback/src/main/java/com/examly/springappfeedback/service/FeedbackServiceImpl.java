@@ -1,5 +1,5 @@
 package com.examly.springappfeedback.service;
 
-public class FeedbackServiceImpl {
-    
+public interface FeedbackServiceImpl {
+    // To do later
 }
