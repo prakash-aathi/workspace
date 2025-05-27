@@ -60,12 +60,10 @@ public class WiFiSchemsRequestServiceImpl implements WiFiSchemaRequestService {
     }
 
     @Override
-    public List<WiFiSchema> getWiFiSchemasByUserId(long userId) {
+    public List<WiFiSchemaRequest> getWiFiSchemasByUserId(long userId) {
        
-        List<WiFiSchemaRequest> wifiSchemaRequests = wifiSchemaRequestRepo.findByUser_UserId(userId);
-        return wifiSchemaRequests.stream()
-                .map(WiFiSchemaRequest::getWifiScheme)
-                .toList();
+       return  wifiSchemaRequestRepo.findByUser_UserId(userId);
+        
     }
 
     @Override
