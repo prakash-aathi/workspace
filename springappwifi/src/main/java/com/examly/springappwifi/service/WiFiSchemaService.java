@@ -16,5 +16,6 @@ public interface WiFiSchemaService {
     List<WiFiSchema> getAllWiFiSchemas();
 
 
+
     
 }

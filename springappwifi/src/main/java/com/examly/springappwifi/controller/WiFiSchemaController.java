@@ -62,5 +62,6 @@ public class WiFiSchemaController {
         WiFiSchema updatedSchema = wifiSchemaService.createWiFiSchema(existingSchema);
         return ResponseEntity.ok(updatedSchema);
     }
+
     
 }
