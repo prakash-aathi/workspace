@@ -2,6 +2,8 @@ package com.examly.springappwifi.model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +25,7 @@ public class WiFiSchemaRequest {
 
     @ManyToOne
     @JoinColumn(name = "wifiSchemeId", nullable = false)
+    @JsonProperty("wifiScheme")
     private WiFiSchema wifiScheme;
     private LocalDate requestDate;
     private String status;
@@ -60,12 +63,12 @@ public class WiFiSchemaRequest {
         this.user = user;
     }
 
-    public WiFiSchema getWiFiScheme() {
+    public WiFiSchema getWifiScheme() {
         return wifiScheme;
     }
 
-    public void setWiFiScheme(WiFiSchema wiFiScheme) {
-        this.wifiScheme = wiFiScheme;
+    public void setWifiScheme(WiFiSchema wifiScheme) {
+        this.wifiScheme = wifiScheme;
     }
 
     public LocalDate getRequestDate() {
