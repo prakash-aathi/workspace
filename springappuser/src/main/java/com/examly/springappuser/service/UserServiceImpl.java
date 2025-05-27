@@ -13,7 +13,9 @@ import com.examly.springappuser.config.UserPrinciple;
 import com.examly.springappuser.model.LoginDTO;
 import com.examly.springappuser.model.User;
 import com.examly.springappuser.repository.UserRepo;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserServiceImpl implements UserService {
 
     private final PasswordEncoder encoder;
