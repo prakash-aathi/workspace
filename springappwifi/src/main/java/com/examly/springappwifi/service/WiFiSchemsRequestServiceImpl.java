@@ -1,5 +1,6 @@
 package com.examly.springappwifi.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
@@ -50,6 +51,26 @@ public class WiFiSchemsRequestServiceImpl implements WiFiSchemaRequestService {
                     "WiFi Schema not found for ID: " + wifiSchemaRequest.getWifiScheme().getWifiSchemeId());
         }
         return wifiSchemaRequestRepo.save(wifiSchemaRequest);
+    }
+
+    @Override
+    public WiFiSchemaRequest getWiFiSchemaRequestById(long wifiSchemeRequestId) {
+        return wifiSchemaRequestRepo.findById(wifiSchemeRequestId)
+                .orElseThrow(() -> new RuntimeException("WiFi Schema Request not found with id: " + wifiSchemeRequestId));
+    }
+
+    @Override
+    public List<WiFiSchema> getWiFiSchemasByUserId(long userId) {
+       
+        List<WiFiSchemaRequest> wifiSchemaRequests = wifiSchemaRequestRepo.findByUser_UserId(userId);
+        return wifiSchemaRequests.stream()
+                .map(WiFiSchemaRequest::getWifiScheme)
+                .toList();
+    }
+
+    @Override
+    public List<WiFiSchemaRequest> getAllWiFiSchemaRequests() {
+        return wifiSchemaRequestRepo.findAll();
     }
 
 }
