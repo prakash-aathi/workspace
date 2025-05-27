@@ -1,5 +1,14 @@
 package com.examly.springappwifi.service;
 
-public class WiFiSchemaService {
+import org.springframework.stereotype.Service;
+
+import com.examly.springappwifi.model.WiFiSchema;
+
+@Service
+public interface WiFiSchemaService {
+
+    WiFiSchema createWiFiSchema(WiFiSchema wifiSchema);
+
+
     
 }
