@@ -34,6 +34,7 @@ public class WiFiSchemaRequestController {
                 .body(createdRequest);
     }
 
+    @PreAuthorize("hasRole('User') or hasRole('Admin')")
     @GetMapping("/{wifiSchemeRequestId}")
     public ResponseEntity<WiFiSchemaRequest> getWiFiSchemaRequest(@PathVariable long wifiSchemeRequestId) {
         WiFiSchemaRequest wifiSchemaRequest = wifiSchemaRequestService.getWiFiSchemaRequestById(wifiSchemeRequestId);
@@ -42,8 +43,8 @@ public class WiFiSchemaRequestController {
 
     @PreAuthorize("hasRole('User')")
     @GetMapping("/user/{userId}")
-    public ResponseEntity<List<WiFiSchema>> getWiFiSchemasByUserId(@PathVariable long userId) {
-        List<WiFiSchema> wifiSchemas = wifiSchemaRequestService.getWiFiSchemasByUserId(userId);
+    public ResponseEntity<List<WiFiSchemaRequest>> getWiFiSchemasByUserId(@PathVariable long userId) {
+        List<WiFiSchemaRequest> wifiSchemas = wifiSchemaRequestService.getWiFiSchemasByUserId(userId);
         return ResponseEntity.ok(wifiSchemas);
     }
 
