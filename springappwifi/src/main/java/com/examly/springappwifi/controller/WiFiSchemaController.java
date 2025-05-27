@@ -22,7 +22,7 @@ public class WiFiSchemaController {
         this.wifiSchemaService = wifiSchemaService;
     }
 
-    @PreAuthorize("hasRole('Admin')")
+    // @PreAuthorize("hasRole('Admin')")
     @PostMapping
     public ResponseEntity<WiFiSchema> createWiFiSchema(@RequestBody WiFiSchema wifiSchema) {
         WiFiSchema createdSchema = wifiSchemaService.createWiFiSchema(wifiSchema);
