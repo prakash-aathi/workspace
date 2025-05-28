@@ -1,7 +1,9 @@
 package com.examly.springappuser.config;
 
+import java.nio.charset.StandardCharsets;
 import java.security.Key;
 import java.util.Date;
+import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
@@ -31,10 +33,17 @@ public class JwtUtils {
 
     public String generateJwtToken(Authentication authentication) {
 
+        // set claim for roles
+        HashMap<String, Object> claims = new HashMap<>();
+
         UserPrinciple userPrincipal = (UserPrinciple) authentication.getPrincipal();
+        if (userPrincipal.getAuthorities() != null) {
+            claims.put("roles", userPrincipal.getAuthorities());
+        }
 
         return Jwts.builder()
                 .setSubject((userPrincipal.getUsername()))
+                .setClaims(claims)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date((new Date()).getTime() + jwtExpirationMs))
                 .signWith(key(), SignatureAlgorithm.HS256)
@@ -42,7 +51,7 @@ public class JwtUtils {
     }
 
     private Key key() {
-        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+        return Keys.hmacShaKeyFor(jwtSecret.getBytes(StandardCharsets.UTF_8)); // plain text
     }
 
     public String getUserNameFromJwtToken(String token) {
