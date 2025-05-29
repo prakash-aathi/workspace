@@ -1,4 +1,4 @@
-export interface WifiScheme { 
+export class WifiScheme {
     wifiSchemeId?: number;
     schemeName: string;
     description: string;
@@ -7,6 +7,4 @@ export interface WifiScheme {
     dataLimit: string;
     fee: number;
     availabilityStatus: string;
-
-
 }
