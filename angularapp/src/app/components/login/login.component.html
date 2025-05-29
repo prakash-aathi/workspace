@@ -1,0 +1,28 @@
+<div class="login-container">
+  <div class="image-section">
+    <div class="overlay">
+      <h1>WiZone</h1>
+    </div>
+  </div>
+
+  <div class="form-section">
+    <div class="form-box">
+      <h2>Login</h2>
+
+      <!-- Connect the form -->
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <input type="text" formControlName="username" placeholder="Username" />
+        <input type="password" formControlName="password" placeholder="Password" />
+        <button class="login-btn" type="submit">Login</button>
+      </form>
+
+      <!-- Show error message -->
+      <p *ngIf="errorMsg" class="error">{{ errorMsg }}</p>
+
+      <p class="signup-link">
+        Don't have an account?
+        <a routerLink="/signup">Signup</a>
+      </p>
+    </div>
+  </div>
+</div>

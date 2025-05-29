@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #5a2a27, #e8b96e, #5b3b6d);
+  padding: 10px 20px;
+  color: white;
+
+  .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .role-btn {
+    margin: 0 10px;
+    padding: 5px 10px;
+    border: 1px solid white;
+    background: transparent;
+    color: white;
+    border-radius: 5px;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+
+    li {
+      cursor: pointer;
+    }
+  }
+
+  .logout-btn {
+    background: #ff5733;
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+  }
+}

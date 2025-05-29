@@ -1,0 +1,78 @@
+.signup-container {
+  display: flex;
+  height: 100vh;
+  background: #f5f5f5;
+
+  .image-section {
+    width: 50%;
+    background: url('/assets/images/background.webp') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .form-section {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+
+    form {
+      width: 80%;
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      input, select {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+      }
+
+      small {
+        color: red;
+        margin-bottom: 10px;
+      }
+
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .login-link {
+        text-align: center;
+        margin-top: 10px;
+
+        a {
+          color: #007bff;
+        }
+      }
+    }
+  }
+}
